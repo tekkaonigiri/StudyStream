@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		47B4818A2AF76AE5000FBEA7 /* JustMeAgainDownHere.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47B481892AF76AE5000FBEA7 /* JustMeAgainDownHere.ttf */; };
+		47B4818D2AFB4B9B000FBEA7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B4818C2AFB4B9B000FBEA7 /* Helper.swift */; };
 		47B92BD72AEEE1C2000DFBD1 /* StudyStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B92BD62AEEE1C2000DFBD1 /* StudyStreamApp.swift */; };
 		47B92BD92AEEE1C2000DFBD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B92BD82AEEE1C2000DFBD1 /* ContentView.swift */; };
 		47B92BDB2AEEE1C3000DFBD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B92BDA2AEEE1C3000DFBD1 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		47B481892AF76AE5000FBEA7 /* JustMeAgainDownHere.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JustMeAgainDownHere.ttf; sourceTree = "<group>"; };
 		47B4818B2AF76AF4000FBEA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		47B4818C2AFB4B9B000FBEA7 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		47B92BD32AEEE1C2000DFBD1 /* StudyStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B92BD62AEEE1C2000DFBD1 /* StudyStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyStreamApp.swift; sourceTree = "<group>"; };
 		47B92BD82AEEE1C2000DFBD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				47B481882AF76AC2000FBEA7 /* Fonts */,
 				47B92BD62AEEE1C2000DFBD1 /* StudyStreamApp.swift */,
 				47B92BD82AEEE1C2000DFBD1 /* ContentView.swift */,
+				47B4818C2AFB4B9B000FBEA7 /* Helper.swift */,
 				47B92BDA2AEEE1C3000DFBD1 /* Assets.xcassets */,
 				47B92BDC2AEEE1C3000DFBD1 /* Preview Content */,
 			);
@@ -273,6 +276,7 @@
 			files = (
 				47B92BD92AEEE1C2000DFBD1 /* ContentView.swift in Sources */,
 				47B92BD72AEEE1C2000DFBD1 /* StudyStreamApp.swift in Sources */,
+				47B4818D2AFB4B9B000FBEA7 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
