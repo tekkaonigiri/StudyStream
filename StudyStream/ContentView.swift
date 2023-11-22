@@ -1,9 +1,14 @@
+//Timer aspect modified from Farukh IQBAL
+
 import SwiftUI
 
 struct ContentView: View {
     @State private var showSetTimeSheet = false
-    @State private var showCountdownSheet = false
-    @State var timer: Timer = .initial
+    //@State private var showCountdownSheet = false
+
+    @ObservedObject var timeManager = TimeManager()
+    @State var userPickIndex = 0
+    let availableMins = Array (1...59)
     
     var body: some View {
 //MAIN//
@@ -44,11 +49,11 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 
             VStack {
-//back button
+//cancel button
             Button {
                 showSetTimeSheet.toggle()
             } label: {
-                Text("Back")
+                Text("Cancel")
                     .foregroundColor(.blue)
                     .font(.custom("JustMeAgainDownHere",
                                   size: 40))
@@ -56,48 +61,57 @@ struct ContentView: View {
                 .cornerRadius(30)
                 .controlSize(.mini)
                 .buttonStyle(.bordered)
+                .padding(.top, 80)
                             
 //timer
             VStack {
-                Text("60")
+                Text(secondsToMinutesAndSeconds(seconds: timeManager.secondsLeft))
                     .font(.custom("JustMeAgainDownHere",
-                                  size: 40))
-                    .padding(.top, 80)
-            }
-                            
-//start button
-            Button {
-                showCountdownSheet.toggle()
-                showSetTimeSheet.toggle()
-            } label: {
-                Text("Start")
-                    .foregroundColor(.blue)
-                    .font(.custom("JustMeAgainDownHere",
-                                  size: 40))
-            }.background(Color.white)
-                .cornerRadius(30)
-                .controlSize(.mini)
-                .buttonStyle(.bordered)
-                            
-//countdown
-                .sheet(isPresented: $showCountdownSheet) {
-            ZStack {
-                Image("left-oceanbg")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .ignoresSafeArea()
+                                  size: 100))
+                    .padding(.top, 100)
+                    .foregroundColor(.white)
+                    .padding(.bottom, -5)
 
 //play button
-            VStack {
-                    Image (systemName: timer == .running ? "pause" : "resume")
+                Image (systemName: timeManager.timerMode == .running ? "pause.circle.fill" : "play.circle.fill")
                         .resizable()
                         .aspectRatio (contentMode: .fit)
                         .frame(width: 100, height: 100)
                         .foregroundColor(.white)
-                    }//countdown vstack
-            }//countdown zstack
+                        .padding(.bottom, 20)
+                        .onTapGesture (perform: {
+                            if self.timeManager.timerMode == .initial {
+                                self.timeManager.setTimerLength (minutes: self.availableMins[self.userPickIndex]*60)
+                            }
+                            self.timeManager.timerMode == .running ? self.timeManager.pause(): self.timeManager.start()
+                        })
 
-            }//3rd page sheet - countdown
+//reset timer button
+                if timeManager.timerMode == .paused {
+                    Image (systemName: "gobackward")
+                        .aspectRatio (contentMode: .fit)
+                        .frame(width: 70, height: 70)
+                        .onTapGesture (perform: {
+                            self.timeManager.reset()
+                        }).foregroundColor(.white)
+                }
+
+//pick minutes
+                if timeManager.timerMode == .initial {
+                    Picker (selection: $userPickIndex, label: Text("")) {
+                        ForEach(0..<availableMins.count, id: \.self) {
+                            Text("\(self.availableMins[$0]) min")
+                        }
+                    }
+                    .labelsHidden()
+                    .accentColor(.white)
+                        
+                }
+                Spacer()
+
+            }.navigationBarTitle("Timer") // timer vstack
+
+            }//2nd page
                         }//vstack
                             }//zstack
                         }//2nd page sheet - timer
@@ -106,7 +120,6 @@ struct ContentView: View {
     }//main vstack
     }//main zstack
     }//var body some view
-    }//struct content view
     
     #Preview {
         ContentView()
