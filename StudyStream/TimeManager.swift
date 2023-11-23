@@ -12,8 +12,13 @@ import SwiftUI
 class TimeManager: ObservableObject {
     
     @Published var timerMode: TimerMode = .initial // initial is a state
-    @Published var secondsLeft = UserDefaults.standard.integer(forKey: "timerLength") // review
-    
+    @Published var secondsLeft = UserDefaults.standard.integer(forKey: "timerLength")
+        // published - wrapper for var
+        // secondsLeft - variable
+        /* UserDefaults.standard.integer - retrieves value stored in the class, userdefaults,
+            -- in this case, the value is an integer represented by timerlength
+         */
+
     var timer = Timer() // review
 
     func setTimerLength(minutes: Int) {
@@ -36,6 +41,7 @@ class TimeManager: ObservableObject {
         self.timerMode = .initial
         self.secondsLeft = UserDefaults.standard.integer(forKey: "timerLength")
         timer.invalidate()
+            // used to stop or invalidate
     }
     
     func pause() {
