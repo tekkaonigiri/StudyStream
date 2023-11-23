@@ -9,16 +9,29 @@ struct ContentView: View {
     @State var userPickIndex = 0
     let availableMins = Array (1...59)
 
+    // colors
     let offWhite = Color(red: 0.961, green: 0.961, blue: 0.961)
-    
+    let skyBlue = Color(red: 0.529, green: 0.808, blue: 0.921)
+
+    @State private var showHand = true
     
     var body: some View {
         ZStack {
-            Image("oceanbg")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
+            skyBlue
                 .ignoresSafeArea()
-            
+            WaveView()
+
+//tells user that they can move the wave - disappears after 6 seconds
+            if showHand {
+                ReminderWaveAnimation()
+                    .padding(.leading, 300)
+                    .padding(.vertical, -140)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+                            showHand = false
+                        }
+                    }
+            }
             
             VStack {
                 Text("StudyStream")

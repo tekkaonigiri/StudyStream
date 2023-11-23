@@ -16,18 +16,23 @@ struct TimerView: View {
     @State var userPickIndex = 0
     let availableMins = Array (1...59)
 
+    // colors
     let offWhite = Color(red: 0.961, green: 0.961, blue: 0.961)
+    let skyBlue = Color(red: 0.529, green: 0.808, blue: 0.921)
 
     @Environment(\.presentationMode) var presentationMode
         // LEARN THIS - ENABLES BACK BUTTON TO OG PAGE
 
     var body: some View {
         ZStack {
-            Image("oceanbg")
+            skyBlue
+                .ignoresSafeArea()
+            /* Image("oceanbg")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea()
-                
+                .ignoresSafeArea() */
+            WaveView()
+
             VStack {
 //cancel button
             Button {

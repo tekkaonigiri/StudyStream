@@ -15,6 +15,8 @@
 		47654BAE2B0EE5F500A527B5 /* sedative-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47654BAD2B0EE5F500A527B5 /* sedative-music.mp3 */; };
 		47654BB02B0EF83C00A527B5 /* rock-cinematic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47654BAF2B0EF83C00A527B5 /* rock-cinematic.mp3 */; };
 		47654BB22B0EF84200A527B5 /* ambient-piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47654BB12B0EF84200A527B5 /* ambient-piano.mp3 */; };
+		47654BB62B0F1B4F00A527B5 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47654BB52B0F1B4F00A527B5 /* WaveView.swift */; };
+		47654BBA2B0F27D700A527B5 /* ReminderWaveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47654BB92B0F27D700A527B5 /* ReminderWaveAnimation.swift */; };
 		47B4818A2AF76AE5000FBEA7 /* JustMeAgainDownHere.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47B481892AF76AE5000FBEA7 /* JustMeAgainDownHere.ttf */; };
 		47B4818D2AFB4B9B000FBEA7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B4818C2AFB4B9B000FBEA7 /* Helper.swift */; };
 		47B4818F2AFB560F000FBEA7 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B4818E2AFB560F000FBEA7 /* TimeManager.swift */; };
@@ -53,8 +55,10 @@
 		47654BAD2B0EE5F500A527B5 /* sedative-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sedative-music.mp3"; sourceTree = "<group>"; };
 		47654BAF2B0EF83C00A527B5 /* rock-cinematic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "rock-cinematic.mp3"; sourceTree = "<group>"; };
 		47654BB12B0EF84200A527B5 /* ambient-piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ambient-piano.mp3"; sourceTree = "<group>"; };
+		47654BB52B0F1B4F00A527B5 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		47654BB92B0F27D700A527B5 /* ReminderWaveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderWaveAnimation.swift; sourceTree = "<group>"; };
 		47B481892AF76AE5000FBEA7 /* JustMeAgainDownHere.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JustMeAgainDownHere.ttf; sourceTree = "<group>"; };
-		47B4818B2AF76AF4000FBEA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		47B4818B2AF76AF4000FBEA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47B4818C2AFB4B9B000FBEA7 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		47B4818E2AFB560F000FBEA7 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		47B92BD32AEEE1C2000DFBD1 /* StudyStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +116,8 @@
 				47654BA22B0D885E00A527B5 /* TimerView.swift */,
 				47654BA42B0D946500A527B5 /* FooterView.swift */,
 				47654BA72B0EC7C100A527B5 /* InfoView.swift */,
+				47654BB52B0F1B4F00A527B5 /* WaveView.swift */,
+				47654BB92B0F27D700A527B5 /* ReminderWaveAnimation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,12 +154,12 @@
 			isa = PBXGroup;
 			children = (
 				47654BA62B0EC77400A527B5 /* Views */,
-				47B4818B2AF76AF4000FBEA7 /* Info.plist */,
-				47B92BD62AEEE1C2000DFBD1 /* StudyStreamApp.swift */,
 				47B4818E2AFB560F000FBEA7 /* TimeManager.swift */,
-				47B4818C2AFB4B9B000FBEA7 /* Helper.swift */,
 				47654BA02B0D87A100A527B5 /* PlayMusic.swift */,
+				47B4818C2AFB4B9B000FBEA7 /* Helper.swift */,
+				47B4818B2AF76AF4000FBEA7 /* Info.plist */,
 				47B92BDA2AEEE1C3000DFBD1 /* Assets.xcassets */,
+				47B92BD62AEEE1C2000DFBD1 /* StudyStreamApp.swift */,
 				47654B9F2B0D874D00A527B5 /* Sounds */,
 				47B481882AF76AC2000FBEA7 /* Fonts */,
 				47B92BDC2AEEE1C3000DFBD1 /* Preview Content */,
@@ -322,8 +328,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47654BA82B0EC7C100A527B5 /* InfoView.swift in Sources */,
+				47654BB62B0F1B4F00A527B5 /* WaveView.swift in Sources */,
 				47654BA32B0D885E00A527B5 /* TimerView.swift in Sources */,
 				47654BA52B0D946500A527B5 /* FooterView.swift in Sources */,
+				47654BBA2B0F27D700A527B5 /* ReminderWaveAnimation.swift in Sources */,
 				47B92BD92AEEE1C2000DFBD1 /* ContentView.swift in Sources */,
 				47B92BD72AEEE1C2000DFBD1 /* StudyStreamApp.swift in Sources */,
 				47B4818F2AFB560F000FBEA7 /* TimeManager.swift in Sources */,
