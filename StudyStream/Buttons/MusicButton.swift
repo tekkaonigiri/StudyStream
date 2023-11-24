@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct FooterView: View {
+struct MusicButton: View {
     @State var changeVolume = false
     @State var currentTime = audioPlayer?.currentTime
     @State var beginMusic = true
@@ -24,7 +24,6 @@ struct FooterView: View {
                 }
 
                 if changeVolume == true {
-                    //playSound(sound: "forest-music", type: "mp3", atTime: currentTime)
                     resumeSound()
                 } else {
                     pauseSound()
@@ -48,5 +47,5 @@ struct FooterView: View {
     }
 }
     #Preview {
-        FooterView()
+        MusicButton()
     }

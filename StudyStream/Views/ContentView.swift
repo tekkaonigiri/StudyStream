@@ -12,13 +12,15 @@ struct ContentView: View {
     // colors
     let offWhite = Color(red: 0.961, green: 0.961, blue: 0.961)
     let skyBlue = Color(red: 0.529, green: 0.808, blue: 0.921)
+    public var BGcolor = Color(red: 0.529, green: 0.808, blue: 0.921)
+    // skyBlue is default
 
     @State private var showHand = true
     
     var body: some View {
         ZStack {
-            skyBlue
-                .ignoresSafeArea()
+
+            BGcolor.ignoresSafeArea()
             WaveView()
 
 //tells user that they can move the wave - disappears after 6 seconds
@@ -59,8 +61,16 @@ struct ContentView: View {
                         TimerView()
                     }
 
-                FooterView()
+
+
+                InfoButton()
                     .padding(.top, 250)
+                /* HStack {
+                    MusicButton()
+                        .padding(.horizontal, 10)
+                    InfoButton()
+                        .padding(.horizontal, 10)
+                }.padding(.top, 250) */
                 
             }//main vstack
         }//main zstack
