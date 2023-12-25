@@ -1,6 +1,7 @@
 //Timer aspect modified from Farukh IQBAL
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     @State private var showTimerView = false
@@ -8,6 +9,8 @@ struct ContentView: View {
     @ObservedObject var timeManager = TimeManager()
     @State var userPickIndex = 0
     let availableMins = Array (1...59)
+
+    @State private var notificationAllowed = false
 
     // colors
     let offWhite = Color(red: 0.961, green: 0.961, blue: 0.961)
@@ -22,6 +25,7 @@ struct ContentView: View {
 
             BGcolor.ignoresSafeArea()
             WaveView()
+            NotificationFile()
 
 //tells user that they can move the wave - disappears after 6 seconds
             if showHand {
@@ -79,3 +83,4 @@ struct ContentView: View {
     #Preview {
         ContentView()
     }
+

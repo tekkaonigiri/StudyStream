@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct InfoView: View {
 
@@ -84,8 +85,12 @@ struct InfoView: View {
                         }
                     }
                 }
+
                 Section ("Other") {
-                    //Toggle("Notifications", isOn: $toggleNotif)
+                     Button("Notifications") {
+                         openAppSettings()
+                    }.foregroundColor(.white)
+
                     Button("Send Feedback") {
                         openURL(URL(string: "https://forms.gle/GdzUbNv4a8UsTtct7")!)
                     }.foregroundColor(.white)
@@ -93,6 +98,15 @@ struct InfoView: View {
             }
         }.environment(\.colorScheme, .dark)
     }
+
+    // opens the settings app to the page of the app -- so user can enable notifications
+    func openAppSettings() {
+            if let bundleIdentifier = Bundle.main.bundleIdentifier,
+               let settingsURL = URL(string: UIApplication.openSettingsURLString + bundleIdentifier) {
+                UIApplication.shared.open(settingsURL)
+            }
+        }
+
 }
 #Preview {
     InfoView()

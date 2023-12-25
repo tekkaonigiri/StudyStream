@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47390FAC2B37B8C6004B960A /* NotificationFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47390FAB2B37B8C6004B960A /* NotificationFile.swift */; };
 		473CF3482B105E2F00D4C008 /* MusicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF3472B105E2F00D4C008 /* MusicButton.swift */; };
 		473CF34A2B105F6000D4C008 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF3492B105F6000D4C008 /* InfoButton.swift */; };
 		47654BA12B0D87A100A527B5 /* PlayMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47654BA02B0D87A100A527B5 /* PlayMusic.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47390FAB2B37B8C6004B960A /* NotificationFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFile.swift; sourceTree = "<group>"; };
 		473CF3472B105E2F00D4C008 /* MusicButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicButton.swift; sourceTree = "<group>"; };
 		473CF3492B105F6000D4C008 /* InfoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButton.swift; sourceTree = "<group>"; };
 		47654BA02B0D87A100A527B5 /* PlayMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMusic.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				47B92BD82AEEE1C2000DFBD1 /* ContentView.swift */,
 				47654BA72B0EC7C100A527B5 /* InfoView.swift */,
 				47654BA22B0D885E00A527B5 /* TimerView.swift */,
+				47390FAB2B37B8C6004B960A /* NotificationFile.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				47654BB62B0F1B4F00A527B5 /* WaveView.swift in Sources */,
 				47654BA32B0D885E00A527B5 /* TimerView.swift in Sources */,
 				47654BBA2B0F27D700A527B5 /* ReminderWaveAnimation.swift in Sources */,
+				47390FAC2B37B8C6004B960A /* NotificationFile.swift in Sources */,
 				473CF3482B105E2F00D4C008 /* MusicButton.swift in Sources */,
 				473CF34A2B105F6000D4C008 /* InfoButton.swift in Sources */,
 				47B92BD92AEEE1C2000DFBD1 /* ContentView.swift in Sources */,
