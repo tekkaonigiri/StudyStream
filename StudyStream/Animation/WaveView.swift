@@ -15,7 +15,6 @@ struct WaveView: View {
     let middleOceanColor = Color(red: 0, green: 0.49, blue: 0.862)
     let bottomOceanColor = Color(red: 0, green: 0.271, blue: 0.478)
     
-    
     var body: some View {
         ZStack {
             Wave(offSet: Angle(degrees: waveOffset.degrees), percent: Double(timerValue))

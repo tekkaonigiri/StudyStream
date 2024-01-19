@@ -25,7 +25,8 @@ struct ContentView: View {
 
             BGcolor.ignoresSafeArea()
             WaveView()
-            NotificationFile()
+            // NotificationFile()
+                // temporarily turned off
 
 //tells user that they can move the wave - disappears after 6 seconds
             if showHand {
